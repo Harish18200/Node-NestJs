@@ -9,7 +9,7 @@ import { EncryptionModule } from 'src/encryption.module';
 
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Product])], 
+  imports: [TypeOrmModule.forFeature([Product]),EncryptionModule], 
   controllers: [productController],
   providers: [ProductsService, ProductsRepository,EncryptionService],
   exports: [ProductsService, TypeOrmModule,EncryptionService], 

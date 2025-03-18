@@ -16,11 +16,7 @@ export class ProductsRepository {
   }
 
   async createProduct(name: string, price: string): Promise<Product> {
-    return this.prisma.product.create({
-        data: {
-            name,
-            price, 
-        },
-    });
-}
+    const product = this.productRepo.create({ name, price });
+    return await this.productRepo.save(product);
+  }
 }

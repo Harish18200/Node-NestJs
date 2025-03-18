@@ -5,7 +5,7 @@ import { Injectable } from '@nestjs/common';
 export class EncryptionService {
     private readonly algorithm = 'aes-256-cbc';
     private readonly key = crypto.scryptSync('your-secret-key', 'salt', 32);
-    private readonly iv = Buffer.alloc(16, 0); // Initialization vector
+    private readonly iv = Buffer.alloc(16, 0); 
 
     encrypt(text: string): string {
         const cipher = crypto.createCipheriv(this.algorithm, this.key, this.iv);
